@@ -8,20 +8,29 @@ const exphbs = require('express-handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.engine('handlebars', exphbs({defaultLayout: 'home'}) );
+// Set View Engine
+
+app.engine('handlebars', exphbs({defaultLayout: 'home'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', (req, res)=>{
+// Load Routes
 
-    res.render('home/index');
-});
+const home = require('./routes/home/index');
+const admin = require('./routes/admin/index');
 
-app.get('/about', (req, res)=>{
+// Use Routes
 
-    res.render('about/index');
-});
+app.use('/', home);
+app.use('/admin', admin);
 
-app.listen(3000, ()=>{
 
-    console.log('Listening on port 3000')
+
+
+
+
+const port = 3000 || process.env.PORT;
+
+app.listen(port, ()=>{
+
+    console.log(`listening on ${port}`);
 });
