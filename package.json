@@ -1,0 +1,22 @@
+{
+  "name": "nodecms",
+  "version": "1.0.0",
+  "description": "A template cms in Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cswarbreck/nodecms.git"
+  },
+  "author": "Cosmo Swarbreck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cswarbreck/nodecms/issues"
+  },
+  "homepage": "https://github.com/cswarbreck/nodecms#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
